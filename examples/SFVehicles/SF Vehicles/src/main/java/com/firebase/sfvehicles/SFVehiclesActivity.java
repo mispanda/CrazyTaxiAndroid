@@ -116,14 +116,18 @@ public class SFVehiclesActivity extends FragmentActivity {
     private void setupLive2DModels() {
         try {
             //String modelName = "tsumiki";
-            String modelName = "Epsilon_free";
+            //String modelName = "Epsilon_free";
             //String modelName = "izumi_illust";
 //            String modelName = "hibiki";
+            String modelName = "shizuku";
             mModelSetting = new L2DModelSetting(this, modelName);
             mModel = new MyL2DModel(this, mModelSetting);
 
             mLive2DRender = new Live2DRender();
             mLive2DRender.setModel(mModel);
+
+            final String[] keys = mModelSetting.getMotions().keySet().toArray(new String[]{});
+            mModel.showMotion(0, keys[0]);
 
         } catch (JSONException e) {
             e.printStackTrace();

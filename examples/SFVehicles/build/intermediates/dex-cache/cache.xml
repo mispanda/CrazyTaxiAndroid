@@ -3,30 +3,120 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="/Users/wonliao/.android/build-cache/a048bc303bdef25f407dac0518c41f150bc4bb2c/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.2"
-        sha1="19bbf3403276674a2118f5a3ae344348edc86e69">
-        <dex dex="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2be337e7e9c2633bd134473502aa1d12e627944e\classes.dex" />
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d3e36053f426be1747c51e8126c9261a5e18bf16/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\libs\live2d_android.jar"
+        jar="/Users/wonliao/.android/build-cache/a2286525407caea3f8689c7c9f1cc9f277595332/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.2"
-        sha1="c67cd3438063044d8fc8505bf11a0bd8182667f6">
-        <dex dex="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\build\intermediates\transforms\dex\debug\folders\1000\2\live2d_android_d92772409b95b66526d18c076f0a9163da6c40ce\classes.dex" />
+        revision="25.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_581780ffe7d34ffdaca4198c5f625381064741a0/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/wonliao/.android/build-cache/7a8a6995d4180612f99ae545b1f51eb0a8c62e51/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="25.0.2"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e2a346fb3b58c4d13a30cafc4c6f280c3456897f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/755a2fdf9e163edd54946feb6aacbffa8f21447b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5bf4d3cf08fb9591e46d2b6ac4a4c9229e2f8cd3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/0c57c44f4b58f6b7f7df9660b0aa8b61683161c4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_36cc8a93bcfc87f8babc10d3eeebfda3210f2a0e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/6f672b82f4b27e35b5837bd845f7977bc5ae82a2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9b2d6f9336cc497bb19d0a19ce68daf94fa8779b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Users\User\Desktop\android\wonliaoCrazyTaxi\examples\SFVehicles\SF Vehicles\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4f451f43ffa27230b9f51fb200abbb1336ef9e9d\classes.dex" />
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_47f7c9c938316cebcaae9cc01e357465c7c9d92f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/4ed59705f6e2076a926b34a3f71ae58493644844/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d3769e79d85d2536a9ca0bd8ec10b455b8f04f11/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/a7dc557aae097be5e6c0afb15de647539ddc21b8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1e6b5ecf1772899409d8bd42b1a598545a25b341/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26ebbce625a07a90e9cf94af6a5dfabd337345a4">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_33cfa3f36714475670e4f9b9d070e4eb0cf7327d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/libs/live2d_android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c67cd3438063044d8fc8505bf11a0bd8182667f6">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/2/live2d_android_d79726c6d66bf55415b76c184f20df616b3f3e3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/.android/build-cache/ce58b3e07caabe80413c2a247802c90a5881de71/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ee9994b41ec8082ef371216bb1eab4f22f85362/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/wonliao/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/wonliao/AI/CrazyTaxiAndroid3/examples/SFVehicles/SF Vehicles/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_a83fdadefee798b1c86308ca85f116b825f14e31/classes.dex" />
     </item>
 
 </items>
