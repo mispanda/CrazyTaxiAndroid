@@ -16,6 +16,20 @@
         android:layout_alignParentTop="true"
         android:layout_weight="1" />
 
+    <TextView
+        android:id="@+id/watch_car"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="false"
+        android:layout_centerInParent="true"
+        android:background="@drawable/radius_new_point"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="查詢車輛"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/closeBtn"
         android:layout_width="50dp"
@@ -50,14 +64,12 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <EditText
+        <TextView
             android:id="@+id/questionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:ems="10"
-            android:hint="請輸入你的問題"
-            android:inputType="textPersonName"
+            android:text="請輸入你的問題"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textColor="@android:color/background_light" />

@@ -77,6 +77,7 @@ public class SFVehiclesActivity extends FragmentActivity {
     private final int REQ_CODE_SPEECH_INPUT = 100;
     private String mAnswer;
     private MyOkHttp mMyOkhttp;
+    private TextView watchCar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +85,17 @@ public class SFVehiclesActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_main);
 
+        watchCar = (TextView) findViewById(R.id.watch_car);
+        watchCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startMap();
+            }
+        });
+
         Live2D.init();
         initView();
 
-        startMap();
     }
 
     private void initView() {
@@ -142,6 +150,12 @@ public class SFVehiclesActivity extends FragmentActivity {
         this.geoQuery.addGeoQueryEventListener(this);
     }
 */
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        watchCar.setVisibility(View.GONE);
+    }
 
     private void questionSubmit(String question) {
 
@@ -270,11 +284,11 @@ public class SFVehiclesActivity extends FragmentActivity {
     }
 
     public void test(View view) {
-        mAnswer = "我的老天鵝，你這個色狼，九四八七九四狂";
-        TextView _v = (TextView)(findViewById(R.id.tts_tv));
-        _v.setText(mAnswer);
-        //m_syn.SpeakToAudio(mAnswer);
-        mModel.lipSynch(mAnswer);
+//        mAnswer = "我的老天鵝，你這個色狼，九四八七九四狂";
+//        TextView _v = (TextView)(findViewById(R.id.tts_tv));
+//        _v.setText(mAnswer);
+//        //m_syn.SpeakToAudio(mAnswer);
+//        mModel.lipSynch(mAnswer);
     }
 
     @Override
@@ -345,7 +359,7 @@ public class SFVehiclesActivity extends FragmentActivity {
 
     private void callLUIS(String question) {
 
-        String url = "https://crazytaxi.stamplayapp.com/api/webhook/v1/crazytaxi/catch?q="+question;
+        String url = "https://crazytaxi.stamplayapp.com/api/webhook/v1/crazytaxi/catch?sync=true&q="+question;
 
 //        String url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/1a5eff99-4dbd-4b86-8c2c-2c7b314493ca?subscription-key=f9a1366042a3474eaa9c4c3ddd882dd2&timezoneOffset=0&verbose=true&q="+question;
 
@@ -361,68 +375,76 @@ public class SFVehiclesActivity extends FragmentActivity {
                         Log.d("won test", "doPost onSuccess JSONObject:" + response);
 
                         try{
-                            JSONObject topScoringIntent = response.getJSONObject("topScoringIntent");
-                            String intent = topScoringIntent.getString("intent");
+//                            JSONObject topScoringIntent = response.getJSONObject("topScoringIntent");
+                            String intent = response.getString("topScoringIntent");
 
                             Log.e("won test ==> ", "intent(" + intent + ")");
                             if(intent.equals("None")) {
 
                                 String query = response.getString("query");
-                                Log.e("won test ==> ", "query(" + query + ")");
-                                mAnswer = "很抱歉，我的主人，我不懂您的問題";
-                                TextView _v = (TextView)(findViewById(R.id.tts_tv));
-                                _v.setText(mAnswer);
-                                //m_syn.SpeakToAudio(mAnswer);
-                                mModel.lipSynch(mAnswer);
-                            } else if(intent.equals("名字")) {
+                                callTuling123(query);
 
-                                mAnswer = "我是五五六八八 AI，先進叫車系統。很高興為您服務，我的主人。";
+//                                Log.e("won test ==> ", "query(" + query + ")");
+//                                mAnswer = "很抱歉，我的主人，我不懂您的問題";
+//                                TextView _v = (TextView)(findViewById(R.id.tts_tv));
+//                                _v.setText(mAnswer);
+//                                //m_syn.SpeakToAudio(mAnswer);
+//                                mModel.lipSynch(mAnswer);
+                            } else if(intent.equals("地點")) {
+                                mAnswer = "是否要叫計程車";
                                 TextView _v = (TextView)(findViewById(R.id.tts_tv));
                                 _v.setText(mAnswer);
                                 //m_syn.SpeakToAudio(mAnswer);
                                 mModel.lipSynch(mAnswer);
                             } else if(intent.equals("找車")) {
+                                watchCar.setVisibility(View.VISIBLE);
 
-                                String carType = "0";
-                                String address = "";
+                                mAnswer = "已為您搜尋到附近的車輛，請點選查看車輛";
+                                TextView _v = (TextView)(findViewById(R.id.tts_tv));
+                                _v.setText(mAnswer);
+                                //m_syn.SpeakToAudio(mAnswer);
+                                mModel.lipSynch(mAnswer);
 
-                                JSONArray entities = response.getJSONArray("entities");
-                                for(int i=0; i<entities.length(); i++) {
+//                                String carType = "0";
+//                                String address = "";
+//
+//                                JSONArray entities = response.getJSONArray("entities");
+//                                for(int i=0; i<entities.length(); i++) {
 
-                                    JSONObject obj = entities.getJSONObject(i);
-                                    String type = obj.getString("type");
+//                                    JSONObject obj = entities.getJSONObject(i);
+//                                    String type = obj.getString("type");
 
-                                    // 車型
-                                    if (type.equals("車型::計程車")) {
-                                        carType = "0";
-                                    }
-                                    else if (type.equals("車型::舒適型")) {
-                                        carType = "1";
-                                    }
-                                    else if (type.equals("車型::豪華型")) {
-                                        carType = "2";
-                                    }
-                                    else if (type.equals("車型::九人座")) {
-                                        carType = "3";
-                                    }
-                                    else if (type.equals("地點")) {
-
-                                        address = obj.getString("entity");
-                                        address = address.replaceAll(" ", "");
-                                    }
-                                }
-                                Log.e("won test", "車型("+carType+") 地點("+address+")");
-
-                                if(carType.equals("0")) {
-
-                                    mAnswer = "非常抱歉，目前系統不支援呼叫計程車，請改呼叫豪華車。";
-                                    TextView _v = (TextView)(findViewById(R.id.tts_tv));
-                                    _v.setText(mAnswer);
-                                    //m_syn.SpeakToAudio(mAnswer);
-                                    mModel.lipSynch(mAnswer);
-                                } else {
-                                    getGoogleMapsAddress(carType, address);
-                                }
+//                                    // 車型
+//                                    if (type.equals("車型::計程車")) {
+//                                        carType = "0";
+//                                    }
+//                                    else if (type.equals("車型::舒適型")) {
+//                                        carType = "1";
+//                                    }
+//                                    else if (type.equals("車型::豪華型")) {
+//                                        carType = "2";
+//                                    }
+//                                    else if (type.equals("車型::九人座")) {
+//                                        carType = "3";
+//                                    }
+//                                    else if (type.equals("地點")) {
+//
+//                                        address = obj.getString("entity");
+//                                        address = address.replaceAll(" ", "");
+//                                    }
+//                                }
+//                                Log.e("won test", "車型("+carType+") 地點("+address+")");
+//
+//                                if(carType.equals("0")) {
+//
+//                                    mAnswer = "非常抱歉，目前系統不支援呼叫計程車，請改呼叫豪華車。";
+//                                    TextView _v = (TextView)(findViewById(R.id.tts_tv));
+//                                    _v.setText(mAnswer);
+//                                    //m_syn.SpeakToAudio(mAnswer);
+//                                    mModel.lipSynch(mAnswer);
+//                                } else {
+//                                    getGoogleMapsAddress(carType, address);
+//                                }
                             }
                         }catch(Exception obj){
                             Log.e("won test ==> ", obj.toString());
@@ -508,12 +530,11 @@ public class SFVehiclesActivity extends FragmentActivity {
                     TextView txtSpeechInput = (TextView)findViewById(R.id.questionText);
                     txtSpeechInput.setText(result.get(0));
 
-
                     mWebView.setVisibility(View.INVISIBLE);
                     mCloseBtn.setVisibility(View.INVISIBLE);
 
-                    InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+//                    InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
                     TextView textview = (TextView)findViewById(R.id.questionText);
                     String question = textview.getText().toString();

@@ -72,14 +72,10 @@ public class MyL2DModel
         initTTS();
 //        initVisualizer();
 
-
-
         setupModel();
         setupPhysics();
         setupMotions();
         setupSounds();
-
-
     }
 
     private void initTTS() {

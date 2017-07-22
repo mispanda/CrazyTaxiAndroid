@@ -255,7 +255,7 @@ public class MapActivity extends FragmentActivity implements GeoQueryEventListen
                 carPos.setKey(dataSnapshot.getKey());
                 if (carPosList.contains(carPos)) {
 
-                    CarPos prevCarPos = carPosList.get(carPosList.indexOf(carPos)-1);
+                    CarPos prevCarPos = carPosList.get(carPosList.indexOf(carPos));
                     Float prevLat = prevCarPos.getL().get(0);
                     Float prevLong = prevCarPos.getL().get(1);
 
