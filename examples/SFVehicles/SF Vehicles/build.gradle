@@ -1,20 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
-    }
-}
 apply plugin: 'com.android.application'
-
-repositories {
-    jcenter()
-    mavenCentral()
-    mavenLocal()
-    flatDir { dirs 'libs' }
-}
-
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.0'
@@ -22,7 +6,7 @@ android {
     defaultConfig {
         applicationId 'com.firebase.sfvehicles'
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -36,6 +20,22 @@ android {
         exclude "META-INF/LICENSE"
         exclude "META-INF/NOTICE"
     }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+    mavenLocal()
+    flatDir { dirs 'libs' }
 }
 
 dependencies {
