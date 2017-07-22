@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -107,7 +108,14 @@ public class SFVehiclesActivity extends FragmentActivity {
 
         //et = (EditText) findViewById(R.id.main_et);
 
+
+        mGlSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        mGlSurfaceView.getHolder().setFormat(PixelFormat.TRANSLUCENT);
+        mGlSurfaceView.setBackgroundResource(R.drawable.back_class_normal);
+        mGlSurfaceView.setZOrderOnTop(true);
+
         setupLive2DModels();
+
         mGlSurfaceView.setRenderer(mLive2DRender);
 
         initButton();
@@ -127,7 +135,7 @@ public class SFVehiclesActivity extends FragmentActivity {
             mLive2DRender.setModel(mModel);
 
             final String[] keys = mModelSetting.getMotions().keySet().toArray(new String[]{});
-            mModel.showMotion(0, keys[0]);
+            mModel.showMotion(0, keys[1]);
 
         } catch (JSONException e) {
             e.printStackTrace();

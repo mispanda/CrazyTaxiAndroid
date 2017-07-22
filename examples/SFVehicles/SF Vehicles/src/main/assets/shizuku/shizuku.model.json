@@ -1,29 +1,4 @@
 {
-	"version":"Sample 1.0.0",
-	"model":"shizuku.moc",
-	"textures":[
-		"shizuku.1024/texture_00.png",
-		"shizuku.1024/texture_01.png",
-		"shizuku.1024/texture_02.png",
-		"shizuku.1024/texture_03.png",
-		"shizuku.1024/texture_04.png",
-		"shizuku.1024/texture_05.png"
-	],
-	"motions":{
-		"idle":[
-			{"file":"motions/idle_00.mtn"}
-		]
-	},
-	"expressions":[
-		{"name":"f01.exp.json","file":"expressions/f01.exp.json"},
-		{"name":"f02.exp.json","file":"expressions/f02.exp.json"},
-		{"name":"f03.exp.json","file":"expressions/f03.exp.json"},
-		{"name":"f04.exp.json","file":"expressions/f04.exp.json"}
-	],
-	"physics":"shizuku.physics.json"
-}
-/*
-{
 	"type":"Live2D Model Setting",
 	"name":"shizuku",
 	"model":"shizuku.moc",
@@ -96,4 +71,3 @@
 		]
 	}
 }
-*/

@@ -260,7 +260,7 @@ public class MyL2DModel
         float visibleWidth = modelWidth * (3.0f/4.0f);
         float margin = 0.5f * (modelWidth/4.0f) ;
 
-        gl.glOrthof(margin, margin+visibleWidth, visibleWidth*height/width, 0, 0.5f, -0.5f);
+        gl.glOrthof(margin, margin+visibleWidth, visibleWidth*height/width, -100, 0.5f, -0.5f);
     }
 
     private void initAngle(int width, int height) {
