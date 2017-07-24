@@ -1,7 +1,6 @@
 package com.firebase.sfvehicles;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
@@ -12,7 +11,6 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -31,6 +29,8 @@ import com.firebase.sfvehicles.model.CarPos;
 import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
+import com.microsoft.speech.tts.Synthesizer;
+import com.microsoft.speech.tts.Voice;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.JsonResponseHandler;
 import com.tsy.sdk.myokhttp.response.RawResponseHandler;
@@ -41,6 +41,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -79,12 +80,21 @@ public class SFVehiclesActivity extends FragmentActivity {
     private String mAnswer;
     private MyOkHttp mMyOkhttp;
     private TextView watchCar;
+//    private Synthesizer m_syn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+//        if (m_syn == null) {
+//            // Create Text To Speech Synthesizer.
+//            m_syn = new Synthesizer("2a8555d2ccfe4b22b89f71d8fb99e78b");
+//        }
+//        m_syn.SetServiceStrategy(Synthesizer.ServiceStrategy.AlwaysService);
+//        Voice v = new Voice("zh-CN", "Microsoft Server Speech Text to Speech Voice (zh-TW, Yating, Apollo)", Voice.Gender.Female, true);
+//        m_syn.SetVoice(v, null);
 
         watchCar = (TextView) findViewById(R.id.watch_car);
         watchCar.setOnClickListener(new View.OnClickListener() {
@@ -349,7 +359,7 @@ public class SFVehiclesActivity extends FragmentActivity {
 
                             TextView _v = (TextView)(findViewById(R.id.tts_tv));
                             _v.setText(mAnswer);
-                            //m_syn.SpeakToAudio(mAnswer);
+//                            m_syn.SpeakToAudio(mAnswer);
                             mModel.lipSynch(mAnswer);
                         }catch(Exception obj){
                             Log.e("won test ==> ", obj.toString());
@@ -406,15 +416,15 @@ public class SFVehiclesActivity extends FragmentActivity {
                                 mAnswer = "是否要叫計程車";
                                 TextView _v = (TextView)(findViewById(R.id.tts_tv));
                                 _v.setText(mAnswer);
-                                //m_syn.SpeakToAudio(mAnswer);
+//                                m_syn.SpeakToAudio(mAnswer);
                                 mModel.lipSynch(mAnswer);
                             } else if(intent.equals("找車")) {
                                 watchCar.setVisibility(View.VISIBLE);
 
-                                mAnswer = "已為您搜尋到附近的車輛，請點選查看車輛";
+                                mAnswer = "已為您搜尋到附近的車輛，請點選查看車輛優";
                                 TextView _v = (TextView)(findViewById(R.id.tts_tv));
                                 _v.setText(mAnswer);
-                                //m_syn.SpeakToAudio(mAnswer);
+//                                m_syn.SpeakToAudio(mAnswer);
                                 mModel.lipSynch(mAnswer);
 
 //                                String carType = "0";
@@ -457,7 +467,19 @@ public class SFVehiclesActivity extends FragmentActivity {
 //                                } else {
 //                                    getGoogleMapsAddress(carType, address);
 //                                }
+                            } else if(intent.equals("早安")) {
+                                Date date = new Date();
+
+                                int hour = date.getHours();
+                                int min = date.getMinutes();
+
+                                mAnswer = "早安優，現在時間" +hour +"點" + min + "分，與你平常出門時間還有十分鐘，需要幫你叫一台計程車嗎";
+                                TextView _v = (TextView) (findViewById(R.id.tts_tv));
+                                _v.setText(mAnswer);
+//                                m_syn.SpeakToAudio(mAnswer);
+                                mModel.lipSynch(mAnswer);
                             }
+
                         }catch(Exception obj){
                             Log.e("won test ==> ", obj.toString());
                         }

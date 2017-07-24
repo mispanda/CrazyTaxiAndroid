@@ -1,1 +1,1 @@
-include ':SF Vehicles'
+include ':SF Vehicles', ':speechsdk'
